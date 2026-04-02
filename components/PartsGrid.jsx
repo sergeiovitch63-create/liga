@@ -32,7 +32,7 @@ export default function PartsGrid() {
       <div className="mx-auto max-w-[1160px]">
         <div className="reveal mb-3 text-[0.7rem] font-bold uppercase tracking-[4px] text-[var(--y)]">Каталог</div>
         <h2 className="reveal font-bebas mb-14 text-[clamp(2.8rem,6vw,5rem)] leading-none tracking-[3px]">ЗАПЧАСТИ</h2>
-        <div className="search-wrap reveal mb-3 flex max-w-[560px]">
+        <div className="search-wrap mb-3 flex max-w-[560px]">
           <input
             type="text"
             value={query}

@@ -13,7 +13,7 @@ export default function BatterySection() {
         <div className="reveal mb-3 text-[0.7rem] font-bold uppercase tracking-[4px] text-[var(--y)]">Аккумуляторы</div>
         <h2 className="reveal font-bebas mb-14 text-[clamp(2.8rem,6vw,5rem)] leading-none tracking-[3px]">АРЕНДА И ЗАМЕНА АКБ</h2>
         <div className="reveal mb-4 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">Дополнительный аккумулятор</div>
-        <div className="reveal mb-12 grid grid-cols-1 gap-[3px] md:grid-cols-4">
+        <div className="mb-12 grid grid-cols-1 gap-[3px] md:grid-cols-4">
           {batteryRent.map((item) => (
             <Link
               key={item.duration}
@@ -37,7 +37,7 @@ export default function BatterySection() {
         </div>
 
         <div className="reveal mb-4 mt-12 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">Замена аккумулятора</div>
-        <div className="reveal mb-1 grid grid-cols-1 gap-[3px] md:grid-cols-2">
+        <div className="mb-1 grid grid-cols-1 gap-[3px] md:grid-cols-2">
           {batterySwap.map((item) => (
             <Link
               key={item.title}
@@ -61,7 +61,7 @@ export default function BatterySection() {
         </div>
 
         <div className="reveal mb-4 mt-8 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">Зарядное устройство</div>
-        <div className="reveal grid gap-[3px]">
+        <div className="grid gap-[3px]">
           {chargers.map((item) => (
             <Link
               key={item.title}

@@ -37,9 +37,12 @@ body {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.65s ease, transform 0.65s ease;
+  /* Évite d’intercepter les taps tant que le bloc n’est pas visible */
+  pointer-events: none;
 }
 
 .reveal.vis {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }

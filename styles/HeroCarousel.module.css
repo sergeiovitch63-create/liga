@@ -21,9 +21,16 @@
   transition: left 0.1s, top 0.1s;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .cursorGlow {
+    display: none;
+  }
+}
+
 .heroBg {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(255, 214, 0, 0.13) 0%, transparent 65%),
     radial-gradient(ellipse 30% 30% at 85% 15%, rgba(255, 165, 0, 0.06) 0%, transparent 60%);
 }
@@ -31,6 +38,7 @@
 .heroGrid {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background-image: linear-gradient(rgba(255, 214, 0, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 214, 0, 0.05) 1px, transparent 1px);
   background-size: 80px 80px;
@@ -74,6 +82,8 @@
 .slide {
   position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 .active { transform: translateX(0) translateZ(0px) scale(1); opacity: 1; z-index: 3; }
 .prev { transform: translateX(-55%) translateZ(-160px) scale(0.78) rotateY(18deg); opacity: 0.45; z-index: 2; filter: brightness(0.5); }
@@ -90,6 +100,8 @@
   text-decoration: none;
   color: inherit;
   z-index: 1;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 214, 0, 0.15);
 }
 .slideBikeLink:focus-visible {
   outline: 2px solid var(--y);
@@ -121,8 +133,72 @@
 }
 
 @media (max-width: 900px) {
-  .heroVisual { height: 50vh; min-height: 360px; }
-  .stage { width: 320px; height: 400px; }
-  .bikeSvg { width: 220px; height: 220px; }
-  .heroBottom { padding: 24px 20px 44px; }
+  /* Évite que le carrousel + points débordent sur la zone contacts */
+  .heroVisual {
+    height: 48vh;
+    min-height: 280px;
+    max-height: 420px;
+    overflow: hidden;
+    padding-bottom: 8px;
+  }
+
+  .carouselWrap {
+    justify-content: flex-start;
+    padding-top: 8px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+  .stage {
+    width: min(100vw - 32px, 320px);
+    height: min(300px, 38vh);
+    flex-shrink: 0;
+  }
+
+  .bikeVisual {
+    width: 260px;
+    height: 280px;
+  }
+
+  .bikeSvg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .dots {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    padding-bottom: 12px;
+  }
+
+  .heroBottom {
+    padding: 28px 20px 40px;
+    gap: 28px;
+    position: relative;
+    z-index: 5;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroVisual {
+    min-height: 260px;
+    max-height: 380px;
+  }
+
+  .stage {
+    height: min(270px, 36vh);
+  }
+
+  .dots {
+    margin-top: 12px;
+    padding-bottom: 16px;
+    gap: 8px;
+  }
+
+  .heroBottom {
+    padding-top: 32px;
+    margin-top: 12px;
+    gap: 32px;
+  }
 }

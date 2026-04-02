@@ -11,7 +11,7 @@ export default function RentalSection() {
       <div className="mx-auto max-w-[1160px]">
         <div className="reveal mb-3 text-[0.7rem] font-bold uppercase tracking-[4px] text-[var(--y)]">Аренда велосипедов</div>
         <h2 className="reveal font-bebas mb-14 text-[clamp(2.8rem,6vw,5rem)] leading-none tracking-[3px]">ПРАЙС НА АРЕНДУ</h2>
-        <div className="reveal mb-10 grid grid-cols-1 gap-[3px] md:grid-cols-3">
+        <div className="mb-10 grid grid-cols-1 gap-[3px] md:grid-cols-3">
           {bikes.map((bike) => (
             <Link
               key={bike.slug}

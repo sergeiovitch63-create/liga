@@ -10,7 +10,7 @@ export function useReveal() {
           if (entry.isIntersecting) entry.target.classList.add("vis");
         });
       },
-      { threshold: 0.08 }
+      { threshold: 0.05, rootMargin: "0px 0px 12% 0px" }
     );
 
     const nodes = document.querySelectorAll(".reveal");
