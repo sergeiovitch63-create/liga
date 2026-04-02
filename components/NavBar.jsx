@@ -93,30 +93,30 @@ export default function NavBar() {
         </button>
       </div>
 
-      <div
-        id="mobile-nav-menu"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Навигация по сайту"
-        aria-hidden={!open}
-        className={`fixed inset-x-0 bottom-0 top-16 z-[1000] flex flex-col overflow-y-auto border-t border-[rgba(255,214,0,0.1)] bg-[rgba(5,5,5,0.97)] backdrop-blur-xl transition-[opacity,visibility] duration-200 md:hidden ${
-          open ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
-        }`}
-      >
-        <ul className="flex list-none flex-col px-2 pb-10 pt-2">
-          {NAV_LINKS.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="block min-h-[48px] border-b border-[rgba(255,214,0,0.08)] px-4 py-3.5 text-[0.9rem] font-semibold uppercase tracking-[2px] text-[var(--text)] no-underline active:bg-[rgba(255,214,0,0.08)]"
-                onClick={close}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Ne monter le panneau qu’à l’ouverture : évite tout calque fixed invisible qui mange les taps (Safari / WebView). */}
+      {open ? (
+        <div
+          id="mobile-nav-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Навигация по сайту"
+          className="fixed inset-x-0 bottom-0 top-16 z-[1000] flex flex-col overflow-y-auto border-t border-[rgba(255,214,0,0.1)] bg-[rgba(5,5,5,0.97)] backdrop-blur-xl md:hidden"
+        >
+          <ul className="flex list-none flex-col px-2 pb-10 pt-2">
+            {NAV_LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="block min-h-[48px] border-b border-[rgba(255,214,0,0.08)] px-4 py-3.5 text-[0.9rem] font-semibold uppercase tracking-[2px] text-[var(--text)] no-underline active:bg-[rgba(255,214,0,0.08)]"
+                  onClick={close}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </nav>
   );
 }

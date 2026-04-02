@@ -9,7 +9,8 @@ export default function SiteChrome({ children }) {
     <>
       <ClientEffects />
       <NavBar />
-      {children}
+      {/* isolate + z-index : le contenu scrollable reste sous la nav/fixes mais au-dessus du fond */}
+      <div className="relative z-[1] min-h-0">{children}</div>
       <ContactFab />
     </>
   );

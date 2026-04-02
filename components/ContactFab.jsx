@@ -34,7 +34,10 @@ export default function ContactFab() {
   }, [open]);
 
   return (
-    <div ref={rootRef} className="fixed bottom-5 right-5 z-[950] flex max-w-[calc(100vw-2.5rem)] flex-col items-end gap-3 md:bottom-7 md:right-7">
+    <div
+      ref={rootRef}
+      className="fixed bottom-5 right-5 z-[950] flex w-max max-w-[min(100vw-1.25rem,320px)] flex-col items-end gap-3 pointer-events-none md:bottom-7 md:right-7"
+    >
       <div
         id="contact-fab-panel"
         role="region"
@@ -104,7 +107,7 @@ export default function ContactFab() {
 
       <button
         type="button"
-        className={`flex flex-col items-center rounded-[1.75rem] border-0 bg-transparent p-0 ${styles.fabBounce} ${open ? styles.fabBouncePaused : ""} cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--y)] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0a0a0a] hover:[&>span]:shadow-[0_8px_32px_rgba(255,214,0,0.45)]`}
+        className={`pointer-events-auto flex flex-col items-center rounded-[1.75rem] border-0 bg-transparent p-0 ${styles.fabBounce} ${open ? styles.fabBouncePaused : ""} cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--y)] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0a0a0a] hover:[&>span]:shadow-[0_8px_32px_rgba(255,214,0,0.45)]`}
         aria-expanded={open}
         aria-controls="contact-fab-panel"
         aria-label="Связаться с нами — открыть выбор канала"
