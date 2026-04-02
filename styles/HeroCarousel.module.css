@@ -1,0 +1,128 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 0;
+}
+
+.cursorGlow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 0, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: left 0.1s, top 0.1s;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 100%, rgba(255, 214, 0, 0.13) 0%, transparent 65%),
+    radial-gradient(ellipse 30% 30% at 85% 15%, rgba(255, 165, 0, 0.06) 0%, transparent 60%);
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 214, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 214, 0, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridMove 20s linear infinite;
+}
+
+.heroVisual {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+.heroBottom {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: linear-gradient(to top, rgba(8, 8, 8, 1) 55%, transparent 100%);
+  padding: 24px 48px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.carouselWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+.stage { position: relative; width: 600px; height: 440px; transform-style: preserve-3d; perspective: 1400px; flex-shrink: 0; }
+.slide {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;
+}
+.active { transform: translateX(0) translateZ(0px) scale(1); opacity: 1; z-index: 3; }
+.prev { transform: translateX(-55%) translateZ(-160px) scale(0.78) rotateY(18deg); opacity: 0.45; z-index: 2; filter: brightness(0.5); }
+.next { transform: translateX(55%) translateZ(-160px) scale(0.78) rotateY(-18deg); opacity: 0.45; z-index: 2; filter: brightness(0.5); }
+.hidden { opacity: 0; pointer-events: none; z-index: 0; }
+
+.slideBikeLink {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  z-index: 1;
+}
+.slideBikeLink:focus-visible {
+  outline: 2px solid var(--y);
+  outline-offset: 4px;
+}
+
+.bikeVisual { width: 340px; height: 380px; position: relative; display: flex; align-items: center; justify-content: center; }
+.bikeSvg { width: 340px; height: 340px; filter: drop-shadow(0 30px 80px rgba(255, 214, 0, 0.3)); }
+.bikeGlow {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 260px; height: 60px;
+  background: radial-gradient(ellipse, rgba(255, 214, 0, 0.35) 0%, transparent 70%); filter: blur(8px);
+}
+.particle { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--y); animation: floatParticle 3s ease-in-out infinite; pointer-events: none; }
+
+.dots {
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+  margin-top: 36px;
+  flex-shrink: 0;
+}
+.dot { width: 28px; height: 3px; background: rgba(255, 214, 0, 0.25); cursor: pointer; transition: background 0.3s, width 0.3s; border: none; padding: 0; }
+.dotOn { background: var(--y); width: 48px; }
+
+@keyframes gridMove { from { background-position: 0 0; } to { background-position: 80px 80px; } }
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1.5); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .heroVisual { height: 50vh; min-height: 360px; }
+  .stage { width: 320px; height: 400px; }
+  .bikeSvg { width: 220px; height: 220px; }
+  .heroBottom { padding: 24px 20px 44px; }
+}

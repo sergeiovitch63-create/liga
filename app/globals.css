@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --y: #ffd600;
+  --y2: #ffa500;
+  --bg: #080808;
+  --card: #111111;
+  --border: rgba(255, 214, 0, 0.15);
+  --muted: #666666;
+  --text: #eeeeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-montserrat), sans-serif;
+  overflow-x: hidden;
+}
+
+.font-bebas {
+  font-family: var(--font-bebas), sans-serif;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.vis {
+  opacity: 1;
+  transform: translateY(0);
+}

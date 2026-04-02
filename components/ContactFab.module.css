@@ -1,0 +1,46 @@
+/* 2s cycle: first ~1s hops, second ~1s still */
+@keyframes fabHop {
+  0% {
+    transform: translateY(0);
+  }
+  8% {
+    transform: translateY(-11px);
+  }
+  16% {
+    transform: translateY(0);
+  }
+  24% {
+    transform: translateY(-7px);
+  }
+  32% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-4px);
+  }
+  48% {
+    transform: translateY(0);
+  }
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fabBounce {
+  animation: fabHop 2s ease-in-out infinite;
+}
+
+.fabBouncePaused {
+  animation-play-state: paused;
+}
+
+.chatPanel {
+  box-shadow:
+    0 0 0 1px rgba(255, 214, 0, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+.botBubble {
+  border-radius: 18px 18px 18px 4px;
+}
