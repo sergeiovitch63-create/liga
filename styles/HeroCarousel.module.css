@@ -141,6 +141,11 @@
 }
 
 @media (max-width: 900px) {
+  /* Plus d’air sous le header fixe (64px) — carrousel moins collé en haut */
+  .hero {
+    padding-top: 96px;
+  }
+
   /* Évite que le carrousel + points débordent sur la zone contacts */
   .heroVisual {
     height: 48vh;
@@ -152,7 +157,7 @@
 
   .carouselWrap {
     justify-content: flex-start;
-    padding-top: 8px;
+    padding-top: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
   }
@@ -189,6 +194,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding-top: 100px;
+  }
+
   .heroVisual {
     min-height: 260px;
     max-height: 380px;
