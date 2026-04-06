@@ -1,9 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { bikes } from "../data/bikes";
-import BikeSvg from "./BikeSvg";
 import CountNumber from "./CountNumber";
+
+const BIKE_CARD_IMAGES = {
+  "mingto-monster": "/images/Mingto monster.jpg",
+  "kugoo-kirin": "/images/KugooKirin V3pro.jpg",
+  "gt-pro": "/images/Gt pro.jpg",
+};
 
 export default function RentalSection() {
   return (
@@ -18,10 +24,13 @@ export default function RentalSection() {
               href={`/rental/${bike.slug}`}
               className="group flex cursor-pointer flex-col bg-[var(--bg)] p-9 no-underline transition-[transform,background-color] duration-200 hover:-translate-y-1.5 hover:bg-[#111]"
             >
-              <div className="mb-4 flex min-h-[168px] items-center justify-center">
-                <BikeSvg
-                  variant={bike.svgVariant}
-                  className="h-44 w-full max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-[1.03] [filter:drop-shadow(0_22px_55px_rgba(255,214,0,0.28))]"
+              <div className="mb-4 flex min-h-[190px] items-center justify-center">
+                <Image
+                  src={BIKE_CARD_IMAGES[bike.slug]}
+                  alt={bike.model}
+                  width={520}
+                  height={340}
+                  className="h-auto w-full max-w-[260px] object-contain transition-transform duration-300 group-hover:scale-[1.03] [filter:drop-shadow(0_22px_55px_rgba(255,214,0,0.28))]"
                 />
               </div>
               <div className="mb-5 inline-block w-fit border border-[rgba(255,214,0,0.2)] bg-[rgba(255,214,0,0.1)] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[2px] text-[var(--y)]">{bike.tag}</div>

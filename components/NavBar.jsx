@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const NAV_LINKS = [
   { href: "/#rental", label: "Аренда" },
   { href: "/battery", label: "Аккумуляторы" },
+  { href: "/remont", label: "Ремонт" },
   { href: "/#parts", label: "Запчасти" },
   { href: "/o-nas", label: "О нас" },
 ];
