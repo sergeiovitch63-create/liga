@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -63,10 +64,14 @@ export default function NavBar() {
             className="flex min-w-0 items-center gap-2 font-bebas text-[1.35rem] tracking-[3px] text-[var(--y)] no-underline sm:text-[1.5rem] sm:gap-2.5"
             onClick={close}
           >
-            <svg width="26" height="26" className="shrink-0 sm:h-7 sm:w-7" viewBox="0 0 32 32" fill="none" aria-hidden>
-              <circle cx="16" cy="16" r="15" stroke="#FFD600" strokeWidth="1.5" />
-              <path d="M20 4L10 17h8L12 28l14-16h-9L20 4z" fill="#FFD600" />
-            </svg>
+            <Image
+              src="/images/header.jpg"
+              alt=""
+              width={84}
+              height={84}
+              className="h-[78px] w-[78px] shrink-0 object-contain sm:h-[84px] sm:w-[84px]"
+              priority
+            />
             <span className="truncate">ЛИГА СКОРОСТИ</span>
           </Link>
 
