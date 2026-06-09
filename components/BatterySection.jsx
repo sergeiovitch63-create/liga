@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { batteryRent, batterySwap, chargers } from "../data/battery";
+import { batteryRent, chargers } from "../data/battery";
 import BatteryPackIllustration from "./illustrations/BatteryPackIllustration";
 import ChargerIllustration from "./illustrations/ChargerIllustration";
 import CountNumber from "./CountNumber";
@@ -11,7 +11,7 @@ export default function BatterySection() {
     <section className="px-5 py-[100px] md:px-12" id="battery">
       <div className="mx-auto max-w-[1160px]">
         <div className="reveal mb-3 text-[0.7rem] font-bold uppercase tracking-[4px] text-[var(--y)]">Аккумуляторы</div>
-        <h2 className="reveal font-bebas mb-14 text-[clamp(2.8rem,6vw,5rem)] leading-none tracking-[3px]">АРЕНДА И ЗАМЕНА АКБ</h2>
+        <h2 className="reveal font-bebas mb-14 text-[clamp(2.8rem,6vw,5rem)] leading-none tracking-[3px]">АРЕНДА АКБ</h2>
         <div className="reveal mb-4 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">Дополнительный аккумулятор</div>
         <div className="mb-12 grid grid-cols-1 gap-[3px] md:grid-cols-4">
           {batteryRent.map((item) => (
@@ -36,31 +36,7 @@ export default function BatterySection() {
           ))}
         </div>
 
-        <div className="reveal mb-4 mt-12 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">Замена аккумулятора</div>
-        <div className="mb-1 grid grid-cols-1 gap-[3px] md:grid-cols-2">
-          {batterySwap.map((item) => (
-            <Link
-              key={item.title}
-              href="/battery#battery-swap"
-              className="flex cursor-pointer items-center justify-between gap-4 bg-[var(--card)] px-7 py-6 no-underline transition-[transform,background-color] duration-200 hover:-translate-y-1 hover:bg-[#1c1c1c] md:gap-6"
-            >
-              <div className="flex min-w-0 flex-1 items-center gap-4">
-                <div className="hidden shrink-0 sm:block">
-                  <BatteryPackIllustration className="h-14 w-[72px] opacity-80 [filter:drop-shadow(0_8px_20px_rgba(255,214,0,0.15))]" />
-                </div>
-                <div className="min-w-0 text-[0.8rem] text-[var(--muted)]">
-                  <strong className="mb-0.5 block text-[0.95rem] text-[var(--text)]">{item.title}</strong>
-                  {item.subtitle}
-                </div>
-              </div>
-              <div className="font-bebas shrink-0 text-[2.5rem] leading-none text-[var(--y)]">
-                <CountNumber n={item.price} d={800} s="₽" />
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="reveal mb-4 mt-8 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">Зарядное устройство</div>
+        <div className="reveal mb-4 mt-12 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">Зарядное устройство</div>
         <div className="grid gap-[3px]">
           {chargers.map((item) => (
             <Link

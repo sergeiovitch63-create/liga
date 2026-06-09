@@ -15,7 +15,7 @@ export default function Page() {
       <PartsGrid />
       <footer className="border-t border-[var(--border)] bg-[var(--bg)] px-12 py-12 text-center">
         <div className="font-bebas mb-2 text-[2.5rem] tracking-[6px] text-[var(--y)]">⚡ ЛИГА СКОРОСТИ</div>
-        <p className="text-[0.78rem] tracking-[1px] text-[var(--muted)]">Аренда электровелосипедов · Запчасти · Замена АКБ</p>
+        <p className="text-[0.78rem] tracking-[1px] text-[var(--muted)]">Аренда электровелосипедов · Запчасти · Ремонт</p>
       </footer>
     </SiteChrome>
   );

@@ -146,7 +146,7 @@ export default function RentalBikeDetail({ bike }) {
         Те же тарифы, что в разделе{" "}
         <Link href="/battery#battery-rent" className="text-[var(--y)] underline underline-offset-2 hover:no-underline">«Дополнительный аккумулятор»</Link>{" "}
         на странице АКБ: аренда третьей батареи к этому велосипеду. Залог на аккумулятор —{" "}
-        <strong className="text-[var(--text)]">1 000 ₽</strong>. Замена АКБ и зарядные устройства — на странице{" "}
+        <strong className="text-[var(--text)]">1 000 ₽</strong>. Зарядные устройства — на странице{" "}
         <Link href="/battery" className="text-[var(--y)] underline underline-offset-2 hover:no-underline">Аккумуляторы</Link>.
       </p>
       <div className="reveal">

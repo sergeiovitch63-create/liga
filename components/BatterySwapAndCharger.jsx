@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { batterySwap, chargers } from "../data/battery";
+import { chargers } from "../data/battery";
 import CountNumber from "./CountNumber";
 
 const swapCardClass =
@@ -12,35 +12,6 @@ const swapLinkExtra =
 export default function BatterySwapAndCharger({ asLinks = false }) {
   return (
     <>
-      <div id="battery-swap" className="reveal mb-4 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">
-        Замена аккумулятора
-      </div>
-      <div className="reveal mb-14 grid grid-cols-1 gap-[3px]">
-        {batterySwap.map((item) => {
-          const inner = (
-            <>
-              <div>
-                <strong className="mb-1 block text-[0.95rem] text-[var(--text)]">{item.title}</strong>
-                <span className="text-[0.8rem] text-[var(--muted)]">{item.subtitle}</span>
-                <p className="mt-3 max-w-xl text-[0.78rem] leading-relaxed text-[#888]">Разовая услуга замены при сдаче нескольких аккумуляторов.</p>
-              </div>
-              <div className="font-bebas shrink-0 text-[2.5rem] leading-none text-[var(--y)]">
-                <CountNumber n={item.price} d={800} s="₽" />
-              </div>
-            </>
-          );
-          return asLinks ? (
-            <Link key={item.title} href="/battery#battery-swap" className={`${swapCardClass} ${swapLinkExtra}`}>
-              {inner}
-            </Link>
-          ) : (
-            <div key={item.title} className={swapCardClass}>
-              {inner}
-            </div>
-          );
-        })}
-      </div>
-
       <div id="battery-charger" className="reveal mb-4 text-[0.7rem] font-bold uppercase tracking-[3px] text-[var(--muted)]">
         Зарядное устройство
       </div>
