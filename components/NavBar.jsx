@@ -65,11 +65,11 @@ export default function NavBar() {
             onClick={close}
           >
             <Image
-              src="/images/header.jpg"
+              src="/images/header.png"
               alt=""
-              width={84}
-              height={84}
-              className="h-[78px] w-[78px] shrink-0 object-contain sm:h-[84px] sm:w-[84px]"
+              width={666}
+              height={579}
+              className="h-[78px] w-auto shrink-0 object-contain sm:h-[84px]"
               priority
             />
             <span className="truncate">ЛИГА СКОРОСТИ</span>
