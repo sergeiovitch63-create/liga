@@ -69,7 +69,7 @@ export default function NavBar() {
               alt=""
               width={666}
               height={579}
-              className="h-[78px] w-auto shrink-0 object-contain sm:h-[84px]"
+              className="h-[44px] w-auto shrink-0 object-contain sm:h-[48px]"
               priority
             />
             <span className="truncate">ЛИГА СКОРОСТИ</span>
