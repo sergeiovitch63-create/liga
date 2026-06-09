@@ -26,7 +26,7 @@ export default function HeroContactBar() {
       <div className="max-w-md px-2 text-center">
         <p className="text-[0.65rem] font-bold uppercase tracking-[4px] text-[var(--y)]">Контакты</p>
         <p className="mt-3 text-[0.88rem] leading-[1.7] text-[#b8b8b8]">
-          <span className="font-semibold text-[var(--text)]">Офис:</span> Калининград, ул. Барнаульская, 2, павильон&nbsp;20
+          <span className="font-semibold text-[var(--text)]">Офис:</span> Калининград, ул. Гаражная,&nbsp;2в (заезд с ул.&nbsp;Юношеская)
         </p>
         <p className="mt-2.5 text-[0.82rem] leading-relaxed text-[var(--muted)]">
           Работаем в будни с 9:00 до 19:00. Суббота и воскресенье — выходные.

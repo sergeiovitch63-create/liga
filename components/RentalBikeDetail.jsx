@@ -33,18 +33,32 @@ export default function RentalBikeDetail({ bike }) {
         />
 
         <div className="reveal mt-8 hidden w-full max-w-[560px] lg:block">
-          <div className="flex flex-wrap gap-10 border-t border-[rgba(255,255,255,0.08)] pt-8">
-            <div>
-              <div className="mb-1 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Аренда</div>
-              <div className="font-bebas text-6xl leading-none text-[var(--y)]">
-                <CountNumber n={bike.price} d={900} />
-              </div>
-              <div className="mt-1 text-[0.8rem] text-[var(--muted)]">рублей / сутки</div>
+          <div className="border-t border-[rgba(255,255,255,0.08)] pt-8">
+            <div className="mb-4 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Аренда</div>
+            <div className="grid grid-cols-3 gap-[3px]">
+              {bike.priceTiers.map((tier) => (
+                <div
+                  key={tier.duration}
+                  className={`bg-[var(--card)] px-4 py-5 text-center ${tier.best ? "border border-[rgba(255,214,0,0.25)] bg-[rgba(255,214,0,0.07)]" : ""}`}
+                >
+                  {tier.best && (
+                    <div className="mb-2 inline-block bg-[var(--y)] px-2 py-0.5 text-[0.55rem] font-extrabold uppercase tracking-[2px] text-black">Выгодно</div>
+                  )}
+                  <div className="mb-2 text-[0.65rem] uppercase tracking-[2px] text-[var(--muted)]">{tier.duration}</div>
+                  <div className="font-bebas text-4xl leading-none text-[var(--y)]">
+                    <sup className="text-[1.1rem]">₽</sup>
+                    <CountNumber n={tier.price} d={900} />
+                  </div>
+                  <div className="mt-1 text-[0.65rem] text-[var(--muted)]">в сутки</div>
+                </div>
+              ))}
             </div>
-            <div>
-              <div className="mb-1 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Залог</div>
-              <div className="font-bebas text-5xl leading-none text-[var(--text)]">
-                <CountNumber n={bike.deposit} d={1000} s=" ₽" />
+            <div className="mt-6 flex flex-wrap gap-10">
+              <div>
+                <div className="mb-1 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Залог</div>
+                <div className="font-bebas text-5xl leading-none text-[var(--text)]">
+                  <CountNumber n={bike.deposit} d={1000} s=" ₽" />
+                </div>
               </div>
             </div>
           </div>
@@ -80,18 +94,32 @@ export default function RentalBikeDetail({ bike }) {
             <li key={line}>{line}</li>
           ))}
         </ul>
-        <div className="reveal flex flex-wrap gap-10 border-t border-[rgba(255,255,255,0.08)] pt-8 lg:hidden">
-          <div>
-            <div className="mb-1 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Аренда</div>
-            <div className="font-bebas text-6xl leading-none text-[var(--y)]">
-              <CountNumber n={bike.price} d={900} />
-            </div>
-            <div className="mt-1 text-[0.8rem] text-[var(--muted)]">рублей / сутки</div>
+        <div className="reveal border-t border-[rgba(255,255,255,0.08)] pt-8 lg:hidden">
+          <div className="mb-4 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Аренда</div>
+          <div className="grid grid-cols-1 gap-[3px] sm:grid-cols-3">
+            {bike.priceTiers.map((tier) => (
+              <div
+                key={tier.duration}
+                className={`bg-[var(--card)] px-4 py-5 text-center ${tier.best ? "border border-[rgba(255,214,0,0.25)] bg-[rgba(255,214,0,0.07)]" : ""}`}
+              >
+                {tier.best && (
+                  <div className="mb-2 inline-block bg-[var(--y)] px-2 py-0.5 text-[0.55rem] font-extrabold uppercase tracking-[2px] text-black">Выгодно</div>
+                )}
+                <div className="mb-2 text-[0.65rem] uppercase tracking-[2px] text-[var(--muted)]">{tier.duration}</div>
+                <div className="font-bebas text-4xl leading-none text-[var(--y)]">
+                  <sup className="text-[1.1rem]">₽</sup>
+                  <CountNumber n={tier.price} d={900} />
+                </div>
+                <div className="mt-1 text-[0.65rem] text-[var(--muted)]">в сутки</div>
+              </div>
+            ))}
           </div>
-          <div>
-            <div className="mb-1 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Залог</div>
-            <div className="font-bebas text-5xl leading-none text-[var(--text)]">
-              <CountNumber n={bike.deposit} d={1000} s=" ₽" />
+          <div className="mt-6 flex flex-wrap gap-10">
+            <div>
+              <div className="mb-1 text-[0.72rem] uppercase tracking-[2px] text-[var(--muted)]">Залог</div>
+              <div className="font-bebas text-5xl leading-none text-[var(--text)]">
+                <CountNumber n={bike.deposit} d={1000} s=" ₽" />
+              </div>
             </div>
           </div>
         </div>

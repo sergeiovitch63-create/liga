@@ -25,7 +25,12 @@ export const bikes = [
       "Тяжёлый класс с усиленной рамой и аккумулятором 60V — уверенная езда по городу и грунту. Подходит для дальних поездок и работы в любую погоду.",
     mainSpecs: bikeMainSpecs,
     extraFeatures: bikeExtraFeatures,
-    price: 500,
+    price: 550,
+    priceTiers: [
+      { duration: "1–6 суток", price: 550 },
+      { duration: "от 7 суток", price: 500 },
+      { duration: "от 30 суток", price: 450, best: true }
+    ],
     deposit: 2000,
     svgVariant: "mingto"
   },
@@ -38,7 +43,12 @@ export const bikes = [
       "Компактный городской электровелосипед: легко паркуется, быстро маневрирует в потоке. Оптимален для коротких и средних маршрутов.",
     mainSpecs: bikeMainSpecs,
     extraFeatures: bikeExtraFeatures,
-    price: 650,
+    price: 700,
+    priceTiers: [
+      { duration: "1–6 суток", price: 700 },
+      { duration: "от 7 суток", price: 650 },
+      { duration: "от 30 суток", price: 600, best: true }
+    ],
     deposit: 2000,
     svgVariant: "kugoo"
   },
@@ -51,7 +61,12 @@ export const bikes = [
       "Спортивная геометрия и аккумулятор 60V для тех, кто ценит динамику и стабильность на скорости. Хороший выбор для регулярных поездок.",
     mainSpecs: bikeMainSpecs,
     extraFeatures: bikeExtraFeatures,
-    price: 650,
+    price: 700,
+    priceTiers: [
+      { duration: "1–6 суток", price: 700 },
+      { duration: "от 7 суток", price: 650 },
+      { duration: "от 30 суток", price: 600, best: true }
+    ],
     deposit: 2000,
     svgVariant: "gt"
   }

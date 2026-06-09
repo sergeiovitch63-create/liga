@@ -1,8 +1,7 @@
 export const batteryRent = [
-  { duration: "От 30 суток", price: 200, best: true },
-  { duration: "7 суток", price: 220 },
-  { duration: "2–6 суток", price: 250 },
-  { duration: "1 сутки", price: 300 }
+  { duration: "От 30 суток", price: 180, best: true },
+  { duration: "От 7 суток", price: 200 },
+  { duration: "1–6 суток", price: 220 }
 ];
 
 export const batterySwap = [
@@ -11,5 +10,6 @@ export const batterySwap = [
 ];
 
 export const chargers = [
-  { title: "В неделю", subtitle: "Аренда зарядного устройства", price: 200 }
+  { title: "В неделю", subtitle: "Аренда зарядного устройства", price: 210 },
+  { title: "За сутки", subtitle: "Аренда зарядного устройства", price: 30 }
 ];

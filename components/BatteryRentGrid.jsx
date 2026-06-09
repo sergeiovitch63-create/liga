@@ -10,7 +10,7 @@ import CountNumber from "./CountNumber";
  */
 export default function BatteryRentGrid({ layout = "section", asLinks = true }) {
   const isDetail = layout === "detail";
-  const gridClass = isDetail ? "grid grid-cols-1 gap-[3px] md:grid-cols-2" : "grid grid-cols-1 gap-[3px] md:grid-cols-4";
+  const gridClass = isDetail ? "grid grid-cols-1 gap-[3px] md:grid-cols-3" : "grid grid-cols-1 gap-[3px] md:grid-cols-3";
 
   const cardInner = (item) => (
     <>
