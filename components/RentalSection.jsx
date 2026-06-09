@@ -38,9 +38,9 @@ export default function RentalSection() {
               <div className="mb-7 text-[0.78rem] text-[var(--muted)]">{bike.type}</div>
               <div className="font-bebas text-7xl leading-none text-[var(--y)]">
                 <span className="mr-2 text-[1.6rem] align-top text-[var(--muted)]">от</span>
-                <CountNumber n={Math.min(...bike.priceTiers.map((t) => t.price))} d={900} />
+                <CountNumber n={bike.priceTiers[0].price} d={900} />
               </div>
-              <div className="mt-1 text-[0.8rem] text-[var(--muted)]">рублей / сутки</div>
+              <div className="mt-1 text-[0.8rem] text-[var(--muted)]">рублей / сутки · 1–6 суток</div>
               <div className="mt-6 flex justify-between border-t border-[rgba(255,255,255,0.05)] pt-5 text-[0.78rem] text-[var(--muted)]">
                 <span>Залоговая стоимость</span>
                 <strong className="text-[var(--text)]">
